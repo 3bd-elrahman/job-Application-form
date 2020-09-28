@@ -1,0 +1,22 @@
+	<p style="color:green;"><%= params[:notice]%></p>
+
+<div class="row" style="margin-top: 30px">
+<div class="col"></div>
+<div class="col-md-6 jumbotron">
+<%= form_with model:@applicant do |f|%>
+<%=f.text_field :name , placeholder:'Full Name',class:"form-control"%><br>
+<%=f.text_field :age, placeholder:'Age',class:"form-control"%><br>
+<%=f.text_field :mobile,placeholder:'Phone',class:"form-control"%><br>
+<%=f.email_field :email,placeholder:'Email',class:"form-control"%><br>
+<%=f.text_field :faculty,placeholder:'Faculty',class:"form-control"%><br>
+<span style="font-weight:bold;"><%=f.label 'Upload your cv' %></span>
+<%=f.file_field :file %>
+
+<%=f.select :city,options_for_select(cities),prompt:'select your city',class:"form-control"%><br><br>
+<%= f.submit 'submit',class:'btn btn-lg btn-success'%><br>
+
+<%end%>
+</div>
+
+<div class="col"></div>
+</div>

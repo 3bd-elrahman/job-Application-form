@@ -1,0 +1,38 @@
+<div class=row>
+	<div class="col"></div>
+
+<div class="col-md-10">
+
+<table class="table table-hover" >
+	<thead class="thead-dark">
+		<tr>
+			<th>name</th>
+			<th>age</th>
+			<th>faculty</th>
+			<th>email</th>
+			<th> phone no</th>
+			<th>city</th>
+			<th>C.V.</th>
+		</tr>
+	</thead>
+<tbody>
+	<% @applicants.each do|applicant| %>
+	<tr>
+		<td><%=applicant.name %></td>
+		<td><%=applicant.age %></td>
+		<td><%=applicant.faculty %></td>
+		<td><%=applicant.email %></td>
+		<td><%=applicant.mobile %></td>
+	   <td><%=applicant.city %></td>
+
+        <td><%=link_to 'Download C.V',applicant.file,download:'' %></td>
+		
+	</tr>
+	<%end%>
+</tbody>
+</table>
+</div>
+
+<div class="col"></div>
+
+</div>
